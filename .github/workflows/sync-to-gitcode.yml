@@ -1,0 +1,26 @@
+name: Sync GitHub to GitCode
+# 触发条件：当GitHub有推送、删除分支、创建标签时自动同步
+on: [push, delete, create]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      # 第一步：克隆GitHub仓库的完整历史
+      - name: 克隆GitHub仓库
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 必须为0，否则无法同步所有分支和标签
+
+      # 第二步：同步到GitCode
+      - name: 同步代码到GitCode
+        run: |
+          # 添加GitCode远程仓库地址（替换为你的仓库）
+          git remote add gitcode https://gitcode.net/Log-Dog012/dLVSEM.git
+          
+          # 配置Git凭证（使用GitHub Secrets中的令牌，避免明文泄露）
+          git config --global credential.helper store
+          echo "https://Log-Dog012:${{ secrets.GITCODE_TOKEN }}@gitcode.net" > ~/.git-credentials
+          
+          # 镜像推送所有内容（分支、标签、提交历史）
+          git push --mirror gitcode
