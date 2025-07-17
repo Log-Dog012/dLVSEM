@@ -16,11 +16,11 @@ jobs:
       - name: 同步代码到GitCode
         run: |
           # 添加GitCode远程仓库地址（替换为你的仓库）
-          git remote add gitcode https://gitcode.net/Log-Dog012/dLVSEM.git
+          git remote add gitcode https://gitcode.com/Log-Dog012/dLVSEM.git
           
           # 配置Git凭证（使用GitHub Secrets中的令牌，避免明文泄露）
           git config --global credential.helper store
-          echo "https://Log-Dog012:${{ secrets.GITCODE_TOKEN }}@gitcode.net" > ~/.git-credentials
+          echo "https://Log-Dog012:${{ secrets.GITCODE_TOKEN }}@gitcode.com" > ~/.git-credentials
           
           # 镜像推送所有内容（分支、标签、提交历史）
           git push --mirror gitcode
