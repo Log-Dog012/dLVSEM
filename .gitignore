@@ -1,3 +1,5 @@
 .venv/ 
+dataset/*
+!dataset/.gitkeep
 #还未写好
 requirements.txt

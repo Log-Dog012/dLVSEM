@@ -9,7 +9,7 @@ jobs:
     steps:
       # 第一步：克隆GitHub仓库的完整历史
       - name: 克隆GitHub仓库
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0  # 必须为0，否则无法同步所有分支和标签
 
