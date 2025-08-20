@@ -1,4 +1,5 @@
-dataset/
-.ipynb_checkpoints/
-__pycache__/
 .venv/ 
+#试一下
+.github/
+#还未写好
+requirements.txt
