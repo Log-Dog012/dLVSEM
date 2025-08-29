@@ -1,0 +1,14 @@
+建议使用虚拟环境
+
+Python 3.12.10
+以本文件所在文件夹为根目录打开终端
+python -m venv venv  # 创建虚拟环境
+venv\Scripts\activate  # 激活虚拟环境
+从这以后终端提示符前会有(venv)
+python -m pip install --upgrade pip  # 升级pip
+python -m pip install -r requirements.txt  # 安装第三方库
+python -m ipykernel install --user --name=DLVSEMvenv  # 关联虚拟环境到Jupyter
+
+使用...
+
+deactivate  # 退出虚拟环境（也可直接关掉终端）
