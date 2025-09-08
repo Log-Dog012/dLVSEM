@@ -1,4 +1,5 @@
 venv/ 
+xputorch/
 dataset/*
 !dataset/.gitkeep
 #还未写好
